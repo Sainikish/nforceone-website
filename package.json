@@ -1,0 +1,10 @@
+{
+  "name": "nforceone-nikish",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix nforceone-website run dev",
+    "build": "npm --prefix nforceone-website run build",
+    "start": "npm --prefix nforceone-website run start",
+    "lint": "npm --prefix nforceone-website run lint"
+  }
+}

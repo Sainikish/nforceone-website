@@ -1,0 +1,146 @@
+import {
+  ShieldCheck,
+  Bot,
+  Layers,
+  Gauge,
+  CheckCircle2,
+  Repeat,
+  PuzzleIcon,
+  LayoutGrid,
+  CreditCard,
+  Cpu,
+  Smartphone,
+  TabletSmartphone,
+  Globe,
+  Cloud,
+  Code2,
+  BrainCircuit,
+  Workflow,
+  Server,
+  BarChart3,
+  Database,
+  AppWindow,
+  Settings2,
+  TrendingUp,
+  Zap,
+  Target,
+  Users,
+  Sparkles,
+  Shield,
+  Clock,
+  Rocket,
+  Search,
+  Wrench,
+  Lock,
+  Network,
+  MonitorSmartphone,
+  GitBranch,
+  Container as ContainerIcon,
+  Activity,
+  Boxes,
+  Car,
+  Landmark,
+  HeartPulse,
+  GraduationCap,
+  Flame,
+  Factory,
+  ShoppingCart,
+  RadioTower,
+  Building2,
+  Wallet,
+  ClipboardCheck,
+  MapPin,
+  Mail,
+  Phone,
+  ArrowRight,
+  ChevronDown,
+  Menu,
+  X,
+  type LucideProps,
+} from "lucide-react";
+import type { IconName } from "@/lib/types";
+
+const registry: Record<Exclude<IconName, "linkedin">, React.ComponentType<LucideProps>> = {
+  "shield-check": ShieldCheck,
+  bot: Bot,
+  layers: Layers,
+  gauge: Gauge,
+  "check-circle": CheckCircle2,
+  repeat: Repeat,
+  puzzle: PuzzleIcon,
+  "layout-grid": LayoutGrid,
+  "credit-card": CreditCard,
+  cpu: Cpu,
+  smartphone: Smartphone,
+  "tablet-smartphone": TabletSmartphone,
+  globe: Globe,
+  cloud: Cloud,
+  code: Code2,
+  brain: BrainCircuit,
+  workflow: Workflow,
+  server: Server,
+  "bar-chart": BarChart3,
+  database: Database,
+  "app-window": AppWindow,
+  settings: Settings2,
+  "trending-up": TrendingUp,
+  zap: Zap,
+  target: Target,
+  users: Users,
+  sparkles: Sparkles,
+  shield: Shield,
+  clock: Clock,
+  rocket: Rocket,
+  search: Search,
+  wrench: Wrench,
+  lock: Lock,
+  network: Network,
+  "monitor-smartphone": MonitorSmartphone,
+  "git-branch": GitBranch,
+  container: ContainerIcon,
+  activity: Activity,
+  boxes: Boxes,
+  car: Car,
+  landmark: Landmark,
+  "heart-pulse": HeartPulse,
+  "graduation-cap": GraduationCap,
+  flame: Flame,
+  factory: Factory,
+  "shopping-cart": ShoppingCart,
+  "radio-tower": RadioTower,
+  "building-2": Building2,
+  wallet: Wallet,
+  "clipboard-check": ClipboardCheck,
+  "map-pin": MapPin,
+  mail: Mail,
+  phone: Phone,
+  "arrow-right": ArrowRight,
+  "chevron-down": ChevronDown,
+  menu: Menu,
+  x: X,
+};
+
+export function Icon({
+  name,
+  className,
+  strokeWidth = 1.75,
+}: {
+  name: IconName;
+  className?: string;
+  strokeWidth?: number;
+}) {
+  if (name === "linkedin") {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className={className}
+        aria-hidden="true"
+      >
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+      </svg>
+    );
+  }
+  const Cmp = registry[name];
+  return <Cmp className={className} strokeWidth={strokeWidth} aria-hidden="true" />;
+}
