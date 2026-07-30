@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/Icon";
 import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
@@ -8,9 +9,16 @@ export function PartnerCTA() {
   return (
     <section
       id="consultation"
-      className="scroll-mt-24 border-t border-line bg-surface py-20 sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden border-t border-line bg-surface py-20 sm:py-28"
     >
-      <Container>
+      <Image
+        src="/backgrounds/footer-cta.webp"
+        alt=""
+        aria-hidden="true"
+        fill
+        className="pointer-events-none select-none object-cover opacity-[0.08]"
+      />
+      <Container className="relative">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-brand-600">

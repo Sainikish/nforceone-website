@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
@@ -6,6 +7,7 @@ import type { IconName } from "@/lib/types";
 export function IndexTileCard({
   href,
   icon,
+  iconImage,
   title,
   teaser,
   disabled = false,
@@ -13,6 +15,8 @@ export function IndexTileCard({
 }: {
   href: string;
   icon: IconName;
+  /** Optional premium icon-badge artwork; replaces the lucide icon badge when set. */
+  iconImage?: string;
   title: string;
   teaser: string;
   disabled?: boolean;
@@ -24,9 +28,21 @@ export function IndexTileCard({
         href={href}
         className="group relative flex h-full flex-col rounded-2xl border border-line bg-white p-6 shadow-sm shadow-ink/[0.02] transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-900/5"
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
-          <Icon name={icon} className="h-5 w-5" />
-        </span>
+        {iconImage ? (
+          <span className="flex h-16 w-16 items-center justify-center">
+            <Image
+              src={iconImage}
+              alt=""
+              width={64}
+              height={64}
+              className="h-16 w-16 object-contain"
+            />
+          </span>
+        ) : (
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+            <Icon name={icon} className="h-5 w-5" />
+          </span>
+        )}
         <h3 className="mt-4 text-base font-semibold text-ink">{title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-muted">
           {teaser}

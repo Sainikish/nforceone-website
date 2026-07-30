@@ -15,6 +15,7 @@ import { industriesIndex } from "@/lib/content/industries-index";
 import { cn } from "@/lib/cn";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
   { label: "FAQ", href: "/faq" },
@@ -27,7 +28,7 @@ export function Navbar() {
   >(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/70 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/95 backdrop-blur-md">
       <Container className="flex h-18 items-center justify-between py-3">
         <Link href="/" className="flex items-center" aria-label={site.name}>
           <Image
@@ -44,7 +45,7 @@ export function Navbar() {
           <div className="group relative">
             <Link
               href="/services"
-              className="flex items-center gap-1 text-sm font-medium text-ink-muted transition-colors hover:text-ink"
+              className="flex items-center gap-1 text-sm font-medium text-white/70 transition-colors hover:text-white"
             >
               Services
               <Icon name="chevron-down" className="h-4 w-4" />
@@ -79,7 +80,7 @@ export function Navbar() {
           <div className="group relative">
             <Link
               href="/industries"
-              className="flex items-center gap-1 text-sm font-medium text-ink-muted transition-colors hover:text-ink"
+              className="flex items-center gap-1 text-sm font-medium text-white/70 transition-colors hover:text-white"
             >
               Industries
               <Icon name="chevron-down" className="h-4 w-4" />
@@ -103,7 +104,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
+              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
@@ -119,7 +120,7 @@ export function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-ink lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg text-white lg:hidden"
           onClick={() => setMobileOpen((v) => !v)}
         >
           <Icon name={mobileOpen ? "x" : "menu"} className="h-6 w-6" />
@@ -127,7 +128,7 @@ export function Navbar() {
       </Container>
 
       {mobileOpen && (
-        <div className="border-t border-line bg-white lg:hidden">
+        <div className="border-t border-white/10 bg-ink lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             <MobileSection
               label="Services"
@@ -141,7 +142,7 @@ export function Navbar() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="block py-1.5 text-sm text-ink-muted"
+                  className="block py-1.5 text-sm text-white/70"
                   onClick={() => setMobileOpen(false)}
                 >
                   {s.title}
@@ -163,7 +164,7 @@ export function Navbar() {
                 <Link
                   key={ind.slug}
                   href={ind.hasPage ? `/industries/${ind.slug}` : "/contact"}
-                  className="block py-1.5 text-sm text-ink-muted"
+                  className="block py-1.5 text-sm text-white/70"
                   onClick={() => setMobileOpen(false)}
                 >
                   {ind.title}
@@ -175,7 +176,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-1 py-3 text-sm font-medium text-ink"
+                className="rounded-lg px-1 py-3 text-sm font-medium text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -208,16 +209,16 @@ function MobileSection({
   children: React.ReactNode;
 }) {
   return (
-    <div className="border-b border-line/70 py-1">
+    <div className="border-b border-white/10 py-1">
       <div className="flex items-center justify-between">
-        <Link href={href} className="py-3 text-sm font-medium text-ink">
+        <Link href={href} className="py-3 text-sm font-medium text-white">
           {label}
         </Link>
         <button
           type="button"
           onClick={onToggle}
           aria-label={`Toggle ${label}`}
-          className="p-3 text-ink-muted"
+          className="p-3 text-white/70"
         >
           <Icon
             name="chevron-down"

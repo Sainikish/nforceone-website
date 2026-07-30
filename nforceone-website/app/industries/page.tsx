@@ -36,6 +36,7 @@ export default function IndustriesIndexPage() {
                 key={industry.slug}
                 href={industry.hasPage ? `/industries/${industry.slug}` : "/contact"}
                 icon={industry.icon}
+                iconImage={`/icons/industries/${industry.slug}.webp`}
                 title={industry.title}
                 teaser={industry.teaser}
                 disabled={!industry.hasPage}

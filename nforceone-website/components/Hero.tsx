@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { StatsRow } from "@/components/StatsRow";
 import { Icon } from "@/components/Icon";
-import { TechBackground } from "@/components/TechBackground";
 import type { StatItem } from "@/lib/types";
 
 export function Hero({
@@ -20,7 +20,15 @@ export function Hero({
 }) {
   return (
     <section className="relative overflow-hidden bg-ink">
-      <TechBackground className="opacity-90" />
+      <Image
+        src="/backgrounds/hero.webp"
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        className="pointer-events-none select-none object-cover opacity-70"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/70 to-ink" />
 
       <Container className="relative pb-20 pt-20 sm:pb-28 sm:pt-28">
         <div className="mx-auto max-w-4xl text-center">

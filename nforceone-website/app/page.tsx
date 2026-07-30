@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Hero } from "@/components/Hero";
@@ -6,7 +7,6 @@ import { IndexTileCard } from "@/components/IndexTileCard";
 import { Testimonials } from "@/components/Testimonials";
 import { PartnerLogos } from "@/components/PartnerLogos";
 import { Reveal } from "@/components/Reveal";
-import { Icon } from "@/components/Icon";
 import Link from "next/link";
 import {
   homeHero,
@@ -38,8 +38,15 @@ export default function Home() {
         stats={homeStats}
       />
 
-      <section className="py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden py-20 sm:py-28">
+        <Image
+          src="/backgrounds/what-we-do.webp"
+          alt=""
+          aria-hidden="true"
+          fill
+          className="pointer-events-none select-none object-cover opacity-[0.08]"
+        />
+        <Container className="relative">
           <SectionHeading
             eyebrow={whatWeDo.eyebrow}
             title={whatWeDo.heading}
@@ -52,8 +59,15 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-y border-line bg-surface py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden border-y border-line bg-surface py-20 sm:py-28">
+        <Image
+          src="/backgrounds/capabilities-devops.webp"
+          alt=""
+          aria-hidden="true"
+          fill
+          className="pointer-events-none select-none object-cover opacity-[0.10]"
+        />
+        <Container className="relative">
           <SectionHeading
             eyebrow={ourCapabilities.eyebrow}
             title={ourCapabilities.heading}
@@ -80,6 +94,7 @@ export default function Home() {
                 key={s!.slug}
                 href={`/services/${s!.slug}`}
                 icon={s!.icon}
+                iconImage={`/icons/solutions/${s!.slug}.webp`}
                 title={s!.title}
                 teaser={s!.teaser}
                 delay={(i % 4) * 60}
@@ -105,8 +120,14 @@ export default function Home() {
                   href={`/industries/${ind!.slug}`}
                   className="group flex h-full flex-col items-center gap-3 rounded-2xl border border-line bg-white p-5 text-center shadow-sm shadow-ink/[0.02] transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
-                    <Icon name={ind!.icon} className="h-5 w-5" />
+                  <span className="flex h-14 w-14 items-center justify-center">
+                    <Image
+                      src={`/icons/industries/${ind!.slug}.webp`}
+                      alt=""
+                      width={56}
+                      height={56}
+                      className="h-14 w-14 object-contain"
+                    />
                   </span>
                   <span className="text-sm font-medium text-ink">
                     {ind!.title}
@@ -118,13 +139,21 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden bg-ink py-20 sm:py-28">
+        <Image
+          src="/backgrounds/testimonials.webp"
+          alt=""
+          aria-hidden="true"
+          fill
+          className="pointer-events-none select-none object-cover"
+        />
+        <Container className="relative">
           <SectionHeading
             eyebrow="Reviews"
             title="What our clients say"
             align="center"
             className="mx-auto"
+            light
           />
           <div className="mt-14">
             <Testimonials />
