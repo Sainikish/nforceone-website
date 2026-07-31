@@ -7,7 +7,8 @@
 - Network:       http://192.168.13.57:3000
 ✓ Ready in 443ms
 
- GET / 200 in 747ms (next.js: 223ms, application-code: 524ms)
- GET / 200 in 868ms (next.js: 580ms, application-code: 288ms)
- GET / 200 in 236ms (next.js: 3ms, application-code: 233ms)
+ GET / 200 in 759ms (next.js: 226ms, application-code: 534ms)
+ GET / 200 in 1001ms (next.js: 307ms, application-code: 694ms)
+ GET / 200 in 241ms (next.js: 4ms, application-code: 237ms)
+ GET / 200 in 222ms (next.js: 3ms, application-code: 219ms)
 [?25h

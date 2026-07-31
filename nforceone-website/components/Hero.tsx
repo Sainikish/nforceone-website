@@ -26,7 +26,7 @@ export function Hero({
         aria-hidden="true"
         fill
         priority
-        className="pointer-events-none select-none object-cover object-right"
+        className="pointer-events-none select-none object-contain object-center"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/10" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
