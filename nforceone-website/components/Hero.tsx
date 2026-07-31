@@ -31,7 +31,7 @@ export function Hero({
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/10" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
 
-      <Container className="relative pb-16 pt-16 sm:pb-24 sm:pt-24">
+      <Container className="relative pb-[4.5rem] pt-[4.5rem] sm:pb-[6.5rem] sm:pt-[6.5rem]">
         <div className="max-w-2xl">
           <div className="animate-fade-in mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-white/80">
             <Icon name="sparkles" className="h-3.5 w-3.5 text-brand-300" />
