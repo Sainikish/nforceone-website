@@ -15,7 +15,6 @@ import { industriesIndex } from "@/lib/content/industries-index";
 import { cn } from "@/lib/cn";
 
 const navLinks = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
   { label: "FAQ", href: "/faq" },
@@ -42,6 +41,13 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
+          <Link
+            href="/"
+            className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+          >
+            Home
+          </Link>
+
           <div className="group relative">
             <Link
               href="/services"
@@ -130,6 +136,14 @@ export function Navbar() {
       {mobileOpen && (
         <div className="border-t border-white/10 bg-ink lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
+            <Link
+              href="/"
+              className="rounded-lg px-1 py-3 text-sm font-medium text-white"
+              onClick={() => setMobileOpen(false)}
+            >
+              Home
+            </Link>
+
             <MobileSection
               label="Services"
               href="/services"

@@ -3,7 +3,9 @@
     "allow": [
       "PowerShell(node -v)",
       "PowerShell(npm -v)",
-      "PowerShell(npm run dev)"
+      "PowerShell(npm run dev)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/\" -UseBasicParsing -TimeoutSec 5; \"UP: $\\($r.StatusCode\\)\" } catch { \"DOWN: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(node \"C:\\\\Users\\\\SAINIK~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Sainikish-Kumar-Mami-nforceone-nikish\\\\efa073b2-d4f1-4ff8-a1e0-afdb5247a5ab\\\\scratchpad\\\\raster-hero-eco.js\")"
     ]
   }
 }

@@ -94,7 +94,8 @@ export default function Home() {
                 key={s!.slug}
                 href={`/services/${s!.slug}`}
                 icon={s!.icon}
-                iconImage={`/icons/solutions/${s!.slug}.webp`}
+                iconImage={`/images/solutions/${s!.slug}.webp`}
+                imageFit="cover"
                 title={s!.title}
                 teaser={s!.teaser}
                 delay={(i % 4) * 60}

@@ -11,6 +11,7 @@ export const qualityAssurance: ServicePage = {
   heroHeadline: "Quality Assurance",
   heroSubtext:
     "We deliver comprehensive testing and QA services that ensure software reliability, performance, and security, helping businesses achieve flawless user experiences and faster time-to-market.",
+  heroBackgroundImage: "/backgrounds/qa-scene.webp",
   why: {
     heading: "Transforming Software Quality with QA Testing",
     paragraphs: [

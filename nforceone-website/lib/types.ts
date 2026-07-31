@@ -98,6 +98,8 @@ export interface ServicePage {
   heroEyebrow: string;
   heroHeadline: string;
   heroSubtext: string;
+  /** Full-bleed cinematic hero background, e.g. "/backgrounds/qa-scene.webp" */
+  heroBackgroundImage?: string;
   /** "Why Your ... Needs ..." section */
   why: {
     heading: string;

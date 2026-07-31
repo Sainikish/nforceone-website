@@ -12,6 +12,8 @@ export function PageHero({
   subtext,
   icon,
   image,
+  backgroundImage,
+  dark = false,
   breadcrumb,
   cta,
 }: {
@@ -21,22 +23,60 @@ export function PageHero({
   subtext: string;
   icon?: IconName;
   image?: string;
+  /** Full-bleed cinematic background (dark scenes); use with `dark`. */
+  backgroundImage?: string;
+  /** Switches to light-on-dark text for use with `backgroundImage`. */
+  dark?: boolean;
   breadcrumb?: { label: string; href: string }[];
   cta?: { label: string; href: string };
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-line bg-gradient-to-b from-brand-50/60 via-white to-white">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"
-      />
+    <section
+      className={
+        dark
+          ? "relative overflow-hidden border-b border-white/10 bg-ink"
+          : "relative overflow-hidden border-b border-line bg-gradient-to-b from-brand-50/60 via-white to-white"
+      }
+    >
+      {backgroundImage && (
+        <>
+          <Image
+            src={backgroundImage}
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            className="pointer-events-none select-none object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-ink/10" />
+        </>
+      )}
+      {!dark && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"
+        />
+      )}
       <Container className="relative py-16 sm:py-24">
         {breadcrumb && (
-          <nav className="mb-8 flex items-center gap-2 text-sm text-ink-muted">
+          <nav
+            className={
+              dark
+                ? "mb-8 flex items-center gap-2 text-sm text-white/50"
+                : "mb-8 flex items-center gap-2 text-sm text-ink-muted"
+            }
+          >
             {breadcrumb.map((item, i) => (
               <span key={item.href} className="flex items-center gap-2">
-                {i > 0 && <span className="text-line">/</span>}
-                <Link href={item.href} className="hover:text-brand-700">
+                {i > 0 && (
+                  <span className={dark ? "text-white/20" : "text-line"}>
+                    /
+                  </span>
+                )}
+                <Link
+                  href={item.href}
+                  className={dark ? "hover:text-white" : "hover:text-brand-700"}
+                >
                   {item.label}
                 </Link>
               </span>
@@ -58,19 +98,43 @@ export function PageHero({
                   <Icon name={icon} className="h-5 w-5" />
                 </span>
               )}
-              <p className="text-sm font-semibold uppercase tracking-wider text-brand-600">
+              <p
+                className={
+                  dark
+                    ? "text-sm font-semibold uppercase tracking-wider text-brand-300"
+                    : "text-sm font-semibold uppercase tracking-wider text-brand-600"
+                }
+              >
                 {eyebrow}
               </p>
             </div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">
+            <h1
+              className={
+                dark
+                  ? "text-4xl font-extrabold tracking-tight text-white sm:text-5xl"
+                  : "text-4xl font-extrabold tracking-tight text-ink sm:text-5xl"
+              }
+            >
               {title}
             </h1>
             {subtitle && (
-              <p className="mt-3 text-xl font-semibold text-ink-muted">
+              <p
+                className={
+                  dark
+                    ? "mt-3 text-xl font-semibold text-white/80"
+                    : "mt-3 text-xl font-semibold text-ink-muted"
+                }
+              >
                 {subtitle}
               </p>
             )}
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted">
+            <p
+              className={
+                dark
+                  ? "mt-5 max-w-2xl text-lg leading-relaxed text-white/70"
+                  : "mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted"
+              }
+            >
               {subtext}
             </p>
             {cta && (
