@@ -128,14 +128,18 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-y border-line bg-surface py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden py-14 sm:py-20">
+        <div className="absolute inset-0">
+          <Auralis height="100%" className="h-full" />
+        </div>
+        <Container className="relative">
           <SectionHeading
             eyebrow="Industries we serve"
             title="Powering Innovation Across Every Industry"
             description="Our IT services empower organizations — startups, enterprises, and government bodies — to modernize infrastructure, enhance digital resilience, and scale innovation with confidence."
             align="center"
             className="mx-auto"
+            light
           />
           <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {industries.map((ind, i) => (
