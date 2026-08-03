@@ -1,19 +1,25 @@
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { Icon } from "@/components/Icon";
+import { Reveal } from "@/components/Reveal";
 import type { FeatureItem } from "@/lib/types";
 
 export interface RollingListItem extends FeatureItem {
+  href: string;
   image: string;
   imageAlt: string;
 }
 
 function RollingListRow({ item }: { item: RollingListItem }) {
   return (
-    <div className="group relative w-full cursor-pointer border-b border-line py-6">
+    <Link
+      href={item.href}
+      className="group relative block w-full border-b border-line py-6 focus-visible:outline-none"
+    >
       {/* Rolling title */}
       <div className="relative h-[52px] overflow-hidden sm:h-16 md:h-20">
-        <div className="transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-1/2">
+        <div className="transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-1/2 group-focus-visible:-translate-y-1/2">
           {/* State 1: normal */}
           <div className="flex h-[52px] items-center gap-4 sm:h-16 md:h-20">
             {item.icon && (
@@ -26,7 +32,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
             </h3>
           </div>
 
-          {/* State 2: hover (italic + brand color) */}
+          {/* State 2: hover/focus (italic + brand color) */}
           <div className="flex h-[52px] items-center gap-4 sm:h-16 md:h-20">
             {item.icon && (
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white sm:h-11 sm:w-11">
@@ -47,13 +53,20 @@ function RollingListRow({ item }: { item: RollingListItem }) {
         </p>
       )}
 
+      {/* Learn more, shown on hover/focus */}
+      <span className="mt-2 hidden items-center gap-1.5 text-sm font-semibold text-brand-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 sm:flex">
+        Learn more
+        <Icon name="arrow-right" className="h-4 w-4" />
+      </span>
+
       {/* Image reveal */}
       <div
         className={cn(
           "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-36 w-56 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
           "transition-all duration-500 ease-out",
           "translate-x-4 rotate-3 scale-95 opacity-0",
-          "group-hover:translate-x-0 group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100"
+          "group-hover:translate-x-0 group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100",
+          "group-focus-visible:translate-x-0 group-focus-visible:rotate-0 group-focus-visible:scale-100 group-focus-visible:opacity-100"
         )}
       >
         <div className="relative h-full w-full">
@@ -61,20 +74,25 @@ function RollingListRow({ item }: { item: RollingListItem }) {
             src={item.image}
             alt={item.imageAlt}
             fill
-            className="object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0"
+            className="object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0 group-focus-visible:grayscale-0"
           />
           <div className="absolute inset-0 bg-brand-600/15 mix-blend-overlay" />
         </div>
       </div>
-    </div>
+
+      {/* Focus ring, since the row itself is the interactive element */}
+      <span className="pointer-events-none absolute inset-0 rounded-lg opacity-0 outline outline-2 outline-offset-4 outline-brand-500 group-focus-visible:opacity-100" />
+    </Link>
   );
 }
 
 export function RollingList({ items }: { items: RollingListItem[] }) {
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col">
-      {items.map((item) => (
-        <RollingListRow key={item.title} item={item} />
+      {items.map((item, i) => (
+        <Reveal key={item.title} delay={i * 80}>
+          <RollingListRow item={item} />
+        </Reveal>
       ))}
     </div>
   );
