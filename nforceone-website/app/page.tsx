@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Hero } from "@/components/Hero";
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { RollingList } from "@/components/ui/rolling-list";
+import { Auralis } from "@/components/ui/auralis";
 import { IndexTileCard } from "@/components/IndexTileCard";
 import { Testimonials } from "@/components/Testimonials";
 import { PartnerLogos } from "@/components/PartnerLogos";
@@ -70,7 +71,7 @@ export default function Home() {
         stats={homeStats}
       />
 
-      <section className="relative overflow-hidden py-20 sm:py-28">
+      <section className="relative overflow-hidden py-12 sm:py-16">
         <Image
           src="/backgrounds/what-we-do.webp"
           alt=""
@@ -85,26 +86,23 @@ export default function Home() {
             align="center"
             className="mx-auto"
           />
-          <div className="mt-14">
+          <div className="mt-8">
             <RollingList items={whatWeDoRollingItems} />
           </div>
         </Container>
       </section>
 
-      <section className="relative overflow-hidden border-y border-line bg-surface py-20 sm:py-28">
-        <Image
-          src="/backgrounds/capabilities-devops.webp"
-          alt=""
-          aria-hidden="true"
-          fill
-          className="pointer-events-none select-none object-cover opacity-[0.10]"
-        />
+      <section className="relative overflow-hidden py-14 sm:py-20">
+        <div className="absolute inset-0">
+          <Auralis height="100%" className="h-full" />
+        </div>
         <Container className="relative">
           <SectionHeading
             eyebrow={ourCapabilities.eyebrow}
             title={ourCapabilities.heading}
             align="center"
             className="mx-auto"
+            light
           />
           <div className="mt-14">
             <FeatureGrid items={ourCapabilities.items} columns={4} />

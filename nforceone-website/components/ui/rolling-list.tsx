@@ -15,31 +15,31 @@ function RollingListRow({ item }: { item: RollingListItem }) {
   return (
     <Link
       href={item.href}
-      className="group relative block w-full border-b border-line py-6 focus-visible:outline-none"
+      className="group relative block w-full border-b border-line py-3 focus-visible:outline-none"
     >
       {/* Rolling title */}
-      <div className="relative h-[52px] overflow-hidden sm:h-16 md:h-20">
+      <div className="relative h-9 overflow-hidden sm:h-11 md:h-14">
         <div className="transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-1/2 group-focus-visible:-translate-y-1/2">
           {/* State 1: normal */}
-          <div className="flex h-[52px] items-center gap-4 sm:h-16 md:h-20">
+          <div className="flex h-9 items-center gap-3 sm:h-11 md:h-14">
             {item.icon && (
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 sm:h-11 sm:w-11">
-                <Icon name={item.icon} className="h-5 w-5" />
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 sm:h-9 sm:w-9">
+                <Icon name={item.icon} className="h-4 w-4" />
               </span>
             )}
-            <h3 className="text-2xl font-black uppercase tracking-tight text-ink sm:text-4xl md:text-5xl xl:text-6xl">
+            <h3 className="text-lg font-black uppercase tracking-tight text-ink sm:text-2xl md:text-3xl">
               {item.title}
             </h3>
           </div>
 
           {/* State 2: hover/focus (italic + brand color) */}
-          <div className="flex h-[52px] items-center gap-4 sm:h-16 md:h-20">
+          <div className="flex h-9 items-center gap-3 sm:h-11 md:h-14">
             {item.icon && (
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white sm:h-11 sm:w-11">
-                <Icon name={item.icon} className="h-5 w-5" />
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white sm:h-9 sm:w-9">
+                <Icon name={item.icon} className="h-4 w-4" />
               </span>
             )}
-            <h3 className="text-2xl font-black italic uppercase tracking-tight text-brand-500 sm:text-4xl md:text-5xl xl:text-6xl">
+            <h3 className="text-lg font-black italic uppercase tracking-tight text-brand-500 sm:text-2xl md:text-3xl">
               {item.title}
             </h3>
           </div>
@@ -48,13 +48,13 @@ function RollingListRow({ item }: { item: RollingListItem }) {
 
       {/* Description */}
       {item.description && (
-        <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-muted">
+        <p className="mt-1 max-w-md text-sm leading-relaxed text-ink-muted">
           {item.description}
         </p>
       )}
 
       {/* Learn more, shown on hover/focus */}
-      <span className="mt-2 hidden items-center gap-1.5 text-sm font-semibold text-brand-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 sm:flex">
+      <span className="mt-1 hidden items-center gap-1.5 text-sm font-semibold text-brand-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 sm:flex">
         Learn more
         <Icon name="arrow-right" className="h-4 w-4" />
       </span>
@@ -62,7 +62,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
       {/* Image reveal */}
       <div
         className={cn(
-          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-36 w-56 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
+          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-28 w-44 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
           "transition-all duration-500 ease-out",
           "translate-x-4 rotate-3 scale-95 opacity-0",
           "group-hover:translate-x-0 group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100",
