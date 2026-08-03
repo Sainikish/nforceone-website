@@ -71,7 +71,7 @@ export default function Home() {
         stats={homeStats}
       />
 
-      <section className="relative overflow-hidden py-20 sm:py-28">
+      <section className="relative overflow-hidden py-14 sm:py-20">
         <Image
           src="/backgrounds/what-we-do.webp"
           alt=""
@@ -86,7 +86,7 @@ export default function Home() {
             align="center"
             className="mx-auto"
           />
-          <div className="mt-14">
+          <div className="mt-8">
             <RollingList items={whatWeDoRollingItems} />
           </div>
         </Container>
