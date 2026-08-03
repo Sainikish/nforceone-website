@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Hero } from "@/components/Hero";
 import { FeatureGrid } from "@/components/FeatureGrid";
+import { RollingList } from "@/components/ui/rolling-list";
 import { IndexTileCard } from "@/components/IndexTileCard";
 import { Testimonials } from "@/components/Testimonials";
 import { PartnerLogos } from "@/components/PartnerLogos";
@@ -20,7 +21,35 @@ import { servicesIndex } from "@/lib/content/services-index";
 import { industriesIndex } from "@/lib/content/industries-index";
 import { trustBand } from "@/lib/content/site";
 
+const whatWeDoImages: Record<string, { image: string; imageAlt: string }> = {
+  "Cost-effectiveness": {
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&auto=format&fit=crop&q=60",
+    imageAlt: "Team reviewing cost-efficient IT strategy",
+  },
+  "Innovative Technology": {
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop&q=60",
+    imageAlt: "Developers building on the latest technology",
+  },
+  "Industry Expertise": {
+    image:
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&auto=format&fit=crop&q=60",
+    imageAlt: "Team tailoring solutions for a client's industry",
+  },
+  Scalability: {
+    image:
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=400&auto=format&fit=crop&q=60",
+    imageAlt: "Product launch representing business growth",
+  },
+};
+
 export default function Home() {
+  const whatWeDoRollingItems = whatWeDo.items.map((item) => ({
+    ...item,
+    ...whatWeDoImages[item.title],
+  }));
+
   const solutions = homeSolutionsSlugs
     .map((slug) => servicesIndex.find((s) => s.slug === slug))
     .filter(Boolean);
@@ -54,7 +83,7 @@ export default function Home() {
             className="mx-auto"
           />
           <div className="mt-14">
-            <FeatureGrid items={whatWeDo.items} columns={4} />
+            <RollingList items={whatWeDoRollingItems} />
           </div>
         </Container>
       </section>
