@@ -72,13 +72,6 @@ export default function Home() {
       />
 
       <section className="relative overflow-hidden py-12 sm:py-16">
-        <Image
-          src="/backgrounds/what-we-do.webp"
-          alt=""
-          aria-hidden="true"
-          fill
-          className="pointer-events-none select-none object-cover opacity-[0.08]"
-        />
         <Container className="relative">
           <SectionHeading
             eyebrow={whatWeDo.eyebrow}

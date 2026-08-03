@@ -62,7 +62,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
       {/* Image reveal */}
       <div
         className={cn(
-          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-28 w-44 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
+          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-36 w-56 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
           "transition-all duration-500 ease-out",
           "translate-x-4 rotate-3 scale-95 opacity-0",
           "group-hover:translate-x-0 group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100",
