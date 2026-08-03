@@ -21,33 +21,36 @@ import { servicesIndex } from "@/lib/content/services-index";
 import { industriesIndex } from "@/lib/content/industries-index";
 import { trustBand } from "@/lib/content/site";
 
-const whatWeDoImages: Record<string, { image: string; imageAlt: string }> = {
+const whatWeDoDetails: Record<
+  string,
+  { href: string; image: string; imageAlt: string }
+> = {
   "Cost-effectiveness": {
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&auto=format&fit=crop&q=60",
-    imageAlt: "Team reviewing cost-efficient IT strategy",
+    href: "/services/management-services",
+    image: "/images/solutions/quality-assurance.webp",
+    imageAlt: "Dashboard showing optimal system health and uptime",
   },
   "Innovative Technology": {
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop&q=60",
-    imageAlt: "Developers building on the latest technology",
+    href: "/services/artificial-intelligence",
+    image: "/images/solutions/artificial-intelligence.webp",
+    imageAlt: "Holographic AI visualization",
   },
   "Industry Expertise": {
-    image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&auto=format&fit=crop&q=60",
-    imageAlt: "Team tailoring solutions for a client's industry",
+    href: "/industries",
+    image: "/images/solutions/software-development.webp",
+    imageAlt: "Team collaborating on a tailored solution",
   },
   Scalability: {
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=400&auto=format&fit=crop&q=60",
-    imageAlt: "Product launch representing business growth",
+    href: "/services/performance-testing",
+    image: "/images/solutions/database-management.webp",
+    imageAlt: "Scalable server infrastructure",
   },
 };
 
 export default function Home() {
   const whatWeDoRollingItems = whatWeDo.items.map((item) => ({
     ...item,
-    ...whatWeDoImages[item.title],
+    ...whatWeDoDetails[item.title],
   }));
 
   const solutions = homeSolutionsSlugs
