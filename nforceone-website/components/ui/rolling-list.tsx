@@ -15,7 +15,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
   return (
     <Link
       href={item.href}
-      className="group relative block w-full border-b border-line py-4 focus-visible:outline-none"
+      className="group relative block w-full border-b border-line py-3 focus-visible:outline-none"
     >
       {/* Rolling title */}
       <div className="relative h-9 overflow-hidden sm:h-11 md:h-14">
@@ -48,13 +48,13 @@ function RollingListRow({ item }: { item: RollingListItem }) {
 
       {/* Description */}
       {item.description && (
-        <p className="mt-1.5 max-w-md text-sm leading-relaxed text-ink-muted">
+        <p className="mt-1 max-w-md text-sm leading-relaxed text-ink-muted">
           {item.description}
         </p>
       )}
 
       {/* Learn more, shown on hover/focus */}
-      <span className="mt-1.5 hidden items-center gap-1.5 text-sm font-semibold text-brand-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 sm:flex">
+      <span className="mt-1 hidden items-center gap-1.5 text-sm font-semibold text-brand-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 sm:flex">
         Learn more
         <Icon name="arrow-right" className="h-4 w-4" />
       </span>
@@ -62,7 +62,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
       {/* Image reveal */}
       <div
         className={cn(
-          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-24 w-36 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
+          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-28 w-44 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
           "transition-all duration-500 ease-out",
           "translate-x-4 rotate-3 scale-95 opacity-0",
           "group-hover:translate-x-0 group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100",

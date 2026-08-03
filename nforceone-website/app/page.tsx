@@ -71,7 +71,7 @@ export default function Home() {
         stats={homeStats}
       />
 
-      <section className="relative overflow-hidden py-14 sm:py-20">
+      <section className="relative overflow-hidden py-12 sm:py-16">
         <Image
           src="/backgrounds/what-we-do.webp"
           alt=""
