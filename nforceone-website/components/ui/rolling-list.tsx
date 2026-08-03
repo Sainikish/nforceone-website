@@ -21,7 +21,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
                 <Icon name={item.icon} className="h-5 w-5" />
               </span>
             )}
-            <h3 className="text-2xl font-black uppercase tracking-tight text-ink sm:text-4xl md:text-5xl">
+            <h3 className="text-2xl font-black uppercase tracking-tight text-ink sm:text-4xl md:text-5xl xl:text-6xl">
               {item.title}
             </h3>
           </div>
@@ -33,7 +33,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
                 <Icon name={item.icon} className="h-5 w-5" />
               </span>
             )}
-            <h3 className="text-2xl font-black italic uppercase tracking-tight text-brand-500 sm:text-4xl md:text-5xl">
+            <h3 className="text-2xl font-black italic uppercase tracking-tight text-brand-500 sm:text-4xl md:text-5xl xl:text-6xl">
               {item.title}
             </h3>
           </div>
@@ -42,7 +42,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
 
       {/* Description */}
       {item.description && (
-        <p className="mt-2 text-sm leading-relaxed text-ink-muted transition-opacity duration-300 md:absolute md:right-0 md:top-8 md:mt-0 md:max-w-xs md:text-right md:group-hover:opacity-0">
+        <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-muted">
           {item.description}
         </p>
       )}
@@ -50,7 +50,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
       {/* Image reveal */}
       <div
         className={cn(
-          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-32 w-48 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
+          "pointer-events-none absolute right-0 top-1/2 z-20 hidden h-36 w-56 -translate-y-1/2 overflow-hidden rounded-lg shadow-2xl md:block",
           "transition-all duration-500 ease-out",
           "translate-x-4 rotate-3 scale-95 opacity-0",
           "group-hover:translate-x-0 group-hover:rotate-0 group-hover:scale-100 group-hover:opacity-100"
@@ -72,7 +72,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
 
 export function RollingList({ items }: { items: RollingListItem[] }) {
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col">
+    <div className="mx-auto flex w-full max-w-6xl flex-col">
       {items.map((item) => (
         <RollingListRow key={item.title} item={item} />
       ))}
