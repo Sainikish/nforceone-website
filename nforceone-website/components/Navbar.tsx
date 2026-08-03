@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
@@ -15,20 +16,20 @@ import { industriesIndex } from "@/lib/content/industries-index";
 import { cn } from "@/lib/cn";
 
 const navLinks = [
-  { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<
     "services" | "industries" | null
   >(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/95 backdrop-blur-md">
-      <Container className="flex h-18 items-center justify-between py-3">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black">
+      <Container className="flex h-24 items-center justify-between py-3">
         <Link href="/" className="flex items-center" aria-label={site.name}>
           <Image
             src={site.logo}
@@ -36,16 +37,29 @@ export function Navbar() {
             width={222}
             height={152}
             priority
-            className="h-11 w-auto rounded-lg"
+            className="h-16 w-auto"
           />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
           <Link
             href="/"
-            className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-white",
+              pathname === "/" ? "text-brand-500" : "text-white/70"
+            )}
           >
             Home
+          </Link>
+
+          <Link
+            href="/about"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-white",
+              pathname === "/about" ? "text-brand-500" : "text-white/70"
+            )}
+          >
+            About Us
           </Link>
 
           <div className="group relative">
@@ -110,7 +124,10 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-white",
+                pathname === link.href ? "text-brand-500" : "text-white/70"
+              )}
             >
               {link.label}
             </Link>
@@ -118,7 +135,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button href="/contact" size="sm" showArrow>
+          <Button href="/contact" size="sm">
             Contact Us
           </Button>
         </div>
@@ -134,7 +151,7 @@ export function Navbar() {
       </Container>
 
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-ink lg:hidden">
+        <div className="border-t border-white/10 bg-black lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             <Link
               href="/"
@@ -142,6 +159,14 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
             >
               Home
+            </Link>
+
+            <Link
+              href="/about"
+              className="rounded-lg px-1 py-3 text-sm font-medium text-white"
+              onClick={() => setMobileOpen(false)}
+            >
+              About Us
             </Link>
 
             <MobileSection
