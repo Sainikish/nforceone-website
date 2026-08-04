@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Hero } from "@/components/Hero";
@@ -7,7 +6,6 @@ import { Icon } from "@/components/Icon";
 import { RollingList } from "@/components/ui/rolling-list";
 import { Auralis } from "@/components/ui/auralis";
 import { IndexTileCard } from "@/components/IndexTileCard";
-import { Testimonials } from "@/components/Testimonials";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 import {
@@ -156,28 +154,6 @@ export default function Home() {
                 </Link>
               </Reveal>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="relative overflow-hidden bg-ink py-20 sm:py-28">
-        <Image
-          src="/backgrounds/testimonials.webp"
-          alt=""
-          aria-hidden="true"
-          fill
-          className="pointer-events-none select-none object-cover"
-        />
-        <Container className="relative">
-          <SectionHeading
-            eyebrow="Reviews"
-            title="What our clients say"
-            align="center"
-            className="mx-auto"
-            light
-          />
-          <div className="mt-14">
-            <Testimonials />
           </div>
         </Container>
       </section>
