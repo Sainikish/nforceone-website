@@ -39,7 +39,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
                 <Icon name={item.icon} className="h-4 w-4" />
               </span>
             )}
-            <h3 className="text-lg font-black italic uppercase tracking-tight text-brand-500 sm:text-2xl md:text-3xl">
+            <h3 className="text-lg font-black italic uppercase tracking-tight text-brand-600 sm:text-2xl md:text-3xl">
               {item.title}
             </h3>
           </div>
