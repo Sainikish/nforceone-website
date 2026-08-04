@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Hero } from "@/components/Hero";
@@ -97,30 +98,35 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden py-14 sm:py-20">
-        <div className="absolute inset-0">
-          <Auralis height="100%" className="h-full" />
-        </div>
-        <Container className="relative">
+      <section className="py-20 sm:py-28">
+        <Container>
           <SectionHeading
             eyebrow={ourCapabilities.eyebrow}
             title={ourCapabilities.heading}
             align="center"
             className="mx-auto"
-            light
           />
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {ourCapabilities.items.map((item, i) => (
-              <IndexTileCard
-                key={item.title}
-                href="/services/devops"
-                icon={item.icon!}
-                iconImage={capabilitiesImages[item.title]}
-                imageFit="cover"
-                title={item.title}
-                teaser={item.description!}
-                delay={(i % 4) * 60}
-              />
+              <Reveal key={item.title} delay={(i % 4) * 60}>
+                <Link href="/services/devops" className="group block">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+                    <Image
+                      src={capabilitiesImages[item.title]}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                    {item.description}
+                  </p>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </Container>
