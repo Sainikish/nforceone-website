@@ -63,14 +63,54 @@ export const ourCapabilities = {
   eyebrow: "How we do it",
   heading: "Our Capabilities",
   items: [
-    { icon: "git-branch", title: "CI/CD Pipeline Setup" },
-    { icon: "code", title: "Infrastructure as Code (IaC)" },
-    { icon: "cloud", title: "Cloud Infrastructure Management" },
-    { icon: "container", title: "Containerization & Orchestration" },
-    { icon: "activity", title: "Monitoring & Observability" },
-    { icon: "lock", title: "Security & Compliance Automation" },
-    { icon: "brain", title: "DevOps for AI/ML (MLOps)" },
-    { icon: "settings", title: "Environment Automation" },
+    {
+      icon: "git-branch",
+      title: "CI/CD Pipeline Setup",
+      description:
+        "Automated build, test, and deployment pipelines that ship code faster and safer.",
+    },
+    {
+      icon: "code",
+      title: "Infrastructure as Code (IaC)",
+      description:
+        "Version-controlled infrastructure provisioned consistently across every environment.",
+    },
+    {
+      icon: "cloud",
+      title: "Cloud Infrastructure Management",
+      description:
+        "Scalable, secure cloud environments tuned for performance and cost.",
+    },
+    {
+      icon: "container",
+      title: "Containerization & Orchestration",
+      description:
+        "Docker and Kubernetes-based deployments that scale on demand.",
+    },
+    {
+      icon: "activity",
+      title: "Monitoring & Observability",
+      description:
+        "Real-time visibility into system health, performance, and incidents.",
+    },
+    {
+      icon: "lock",
+      title: "Security & Compliance Automation",
+      description:
+        "Automated policy checks and guardrails built into every deployment.",
+    },
+    {
+      icon: "brain",
+      title: "DevOps for AI/ML (MLOps)",
+      description:
+        "Streamlined pipelines for training, deploying, and monitoring ML models.",
+    },
+    {
+      icon: "settings",
+      title: "Environment Automation",
+      description:
+        "On-demand, repeatable environments that eliminate manual setup.",
+    },
   ] satisfies FeatureItem[],
 };
 

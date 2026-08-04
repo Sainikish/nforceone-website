@@ -1,7 +1,6 @@
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Hero } from "@/components/Hero";
-import { FeatureGrid } from "@/components/FeatureGrid";
 import { Icon } from "@/components/Icon";
 import { RollingList } from "@/components/ui/rolling-list";
 import { Auralis } from "@/components/ui/auralis";
@@ -43,6 +42,22 @@ const whatWeDoDetails: Record<
     image: "/images/solutions/database-management.webp",
     imageAlt: "Scalable server infrastructure",
   },
+};
+
+const capabilitiesImages: Record<string, string> = {
+  "CI/CD Pipeline Setup": "/images/capabilities/ci-cd-pipeline.webp",
+  "Infrastructure as Code (IaC)":
+    "/images/capabilities/infrastructure-as-code.webp",
+  "Cloud Infrastructure Management":
+    "/images/capabilities/cloud-infrastructure.webp",
+  "Containerization & Orchestration":
+    "/images/capabilities/containerization.webp",
+  "Monitoring & Observability": "/images/capabilities/monitoring.webp",
+  "Security & Compliance Automation":
+    "/images/capabilities/security-compliance.webp",
+  "DevOps for AI/ML (MLOps)": "/images/capabilities/mlops.webp",
+  "Environment Automation":
+    "/images/capabilities/environment-automation.webp",
 };
 
 export default function Home() {
@@ -94,8 +109,19 @@ export default function Home() {
             className="mx-auto"
             light
           />
-          <div className="mt-14">
-            <FeatureGrid items={ourCapabilities.items} columns={4} />
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {ourCapabilities.items.map((item, i) => (
+              <IndexTileCard
+                key={item.title}
+                href="/services/devops"
+                icon={item.icon!}
+                iconImage={capabilitiesImages[item.title]}
+                imageFit="cover"
+                title={item.title}
+                teaser={item.description!}
+                delay={(i % 4) * 60}
+              />
+            ))}
           </div>
         </Container>
       </section>
