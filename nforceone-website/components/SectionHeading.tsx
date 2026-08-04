@@ -7,6 +7,7 @@ export function SectionHeading({
   align = "left",
   className,
   light = false,
+  eyebrowClassName,
 }: {
   eyebrow?: string;
   title: string;
@@ -14,6 +15,7 @@ export function SectionHeading({
   align?: "left" | "center";
   className?: string;
   light?: boolean;
+  eyebrowClassName?: string;
 }) {
   return (
     <div
@@ -27,7 +29,7 @@ export function SectionHeading({
         <p
           className={cn(
             "mb-3 text-sm font-semibold uppercase tracking-wider",
-            light ? "text-brand-300" : "text-brand-600"
+            eyebrowClassName ?? (light ? "text-brand-300" : "text-brand-600")
           )}
         >
           {eyebrow}

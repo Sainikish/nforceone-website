@@ -74,6 +74,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
             src={item.image}
             alt={item.imageAlt}
             fill
+            sizes="224px"
             className="object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0 group-focus-visible:grayscale-0"
           />
           <div className="absolute inset-0 bg-brand-600/15 mix-blend-overlay" />
