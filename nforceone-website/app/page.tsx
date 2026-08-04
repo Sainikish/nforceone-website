@@ -3,6 +3,7 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Hero } from "@/components/Hero";
 import { FeatureGrid } from "@/components/FeatureGrid";
+import { Icon } from "@/components/Icon";
 import { RollingList } from "@/components/ui/rolling-list";
 import { Auralis } from "@/components/ui/auralis";
 import { IndexTileCard } from "@/components/IndexTileCard";
@@ -148,14 +149,8 @@ export default function Home() {
                   href={`/industries/${ind!.slug}`}
                   className="group flex h-full flex-col items-center gap-3 rounded-2xl border border-line bg-white p-5 text-center shadow-sm shadow-ink/[0.02] transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg"
                 >
-                  <span className="flex h-14 w-14 items-center justify-center">
-                    <Image
-                      src={`/icons/industries/${ind!.slug}.webp`}
-                      alt=""
-                      width={56}
-                      height={56}
-                      className="h-14 w-14 object-contain"
-                    />
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                    <Icon name={ind!.icon} className="h-7 w-7" />
                   </span>
                   <span className="text-sm font-medium text-ink">
                     {ind!.title}
