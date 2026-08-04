@@ -109,8 +109,8 @@ export default function Home() {
           <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {ourCapabilities.items.map((item, i) => (
               <Reveal key={item.title} delay={(i % 4) * 60}>
-                <Link href="/services/devops" className="group block">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+                <Link href="/services/devops" className="group block text-center">
+                  <div className="relative aspect-square w-full overflow-hidden rounded-lg">
                     <Image
                       src={capabilitiesImages[item.title]}
                       alt=""
@@ -119,10 +119,10 @@ export default function Home() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="mt-5 text-xl font-bold text-ink">
+                  <h3 className="mt-6 text-xl font-bold text-ink">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                  <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-ink-muted">
                     {item.description}
                   </p>
                 </Link>
