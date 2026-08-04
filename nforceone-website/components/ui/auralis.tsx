@@ -156,7 +156,8 @@ export function Auralis({
     ro.observe(container);
     resize();
 
-    let raf: number;
+    let raf = 0;
+    let visible = true;
     const render = (t: number) => {
       gl.uniform2f(locs.res, canvas.width, canvas.height);
       gl.uniform1f(locs.time, t * 0.001 * speed);
@@ -166,12 +167,27 @@ export function Auralis({
       gl.uniform3fv(locs.colors, flat);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      raf = requestAnimationFrame(render);
+      raf = visible ? requestAnimationFrame(render) : 0;
     };
+
+    // Only run the render loop while the canvas is actually on (or near)
+    // screen — this is a full-viewport shader, and two of these idling
+    // off-screen is enough to visibly jank scrolling.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible && raf === 0) {
+          raf = requestAnimationFrame(render);
+        }
+      },
+      { rootMargin: "200px 0px" }
+    );
+    io.observe(container);
 
     raf = requestAnimationFrame(render);
     return () => {
       ro.disconnect();
+      io.disconnect();
       cancelAnimationFrame(raf);
       gl.deleteProgram(program);
     };
