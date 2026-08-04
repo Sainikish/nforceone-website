@@ -8,7 +8,6 @@ import { RollingList } from "@/components/ui/rolling-list";
 import { Auralis } from "@/components/ui/auralis";
 import { IndexTileCard } from "@/components/IndexTileCard";
 import { Testimonials } from "@/components/Testimonials";
-import { PartnerLogos } from "@/components/PartnerLogos";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 import {
@@ -21,7 +20,6 @@ import {
 } from "@/lib/content/home";
 import { servicesIndex } from "@/lib/content/services-index";
 import { industriesIndex } from "@/lib/content/industries-index";
-import { trustBand } from "@/lib/content/site";
 
 const whatWeDoDetails: Record<
   string,
@@ -184,16 +182,6 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-t border-line bg-surface py-16 sm:py-20">
-        <Container>
-          <p className="text-center text-sm font-semibold uppercase tracking-wider text-ink-muted">
-            {trustBand.heading}
-          </p>
-          <div className="mt-10">
-            <PartnerLogos />
-          </div>
-        </Container>
-      </section>
     </>
   );
 }
