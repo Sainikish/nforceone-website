@@ -13,8 +13,8 @@ SERVICES — Services & Solutions. Take your company to new heights by investing
 Comprehensive IT services for businesses: "Tecnologia has the experience and expertise to provide an excellent experience across spheres, for truly holistic IT." (NOTE: leftover "Tecnologia" placeholder text.)
 
 Service tiles (each links "Learn more"):
-- Quality Assurance — Free up internal resources; we handle day-to-day support, management, and monitoring of your IT.
-- Software Development — The right technology, implemented properly, can lead to significant gains in growth.
+- Quality Assurance Free up internal resources; we handle day-to-day support, management, and monitoring of your IT.
+- Software Development  The right technology, implemented properly, can lead to significant gains in growth.
 - Artificial Intelligence — Identify vulnerabilities, assess risks, implement robust security. (NOTE: copy mismatched to AI.)
 - Pega Development — Web development services to establish online presence. (NOTE: mismatched copy.)
 - Pega Testing — Customized mobile app aligned with your brand. (NOTE: mismatched copy.)

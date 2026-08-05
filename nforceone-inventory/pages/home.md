@@ -20,7 +20,7 @@ WHAT WE DO — Transforming Software Quality with QA Testing: Cost-effectiveness
 
 HOW WE DO — Solutions: Quality Assurance (automated build/test/deployment pipelines); Software Development (Terraform, AWS CloudFormation, Pulumi); Artificial Intelligence (AWS/Azure/GCP, cost optimization, disaster recovery); Pega Development (Docker & Kubernetes autoscaling); Pega Testing (dashboards, alerts, Prometheus/Grafana/DataDog); Devops (vulnerability scanning, secrets management, compliance); Database Management (CI/CD for AI, model training/versioning); Data Analytics (on-demand staging/QA/test environments).
 
-INDUSTRIES WE SERVE — Powering Innovation Across Every Industry. Our IT services empower organizations—startups, enterprises, and government bodies—to modernize infrastructure, enhance digital resilience, and scale innovation with confidence.
+INDUSTRIES WE SERVE — Powering Innovation Across Every Industry. Our IT services empower organizations startups, enterprises, and government bodies—to modernize infrastructure, enhance digital resilience, and scale innovation with confidence.
 
 CONTACT US — Partner with Us to Build and Scale with Confidence. We help businesses turn ideas into scalable, secure, and production-ready software.
 

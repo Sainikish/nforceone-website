@@ -18,7 +18,7 @@ export const managementServices: ServicePage = {
   why: {
     heading: "Why Your Software Needs Management Services",
     paragraphs: [
-      "Free up internal resources — we handle day-to-day support, management, and monitoring of your IT so your team can focus on what matters most. Get in touch to discuss your specific management services needs.",
+      "Free up internal resources we handle day-to-day support, management, and monitoring of your IT so your team can focus on what matters most. Get in touch to discuss your specific management services needs.",
     ],
   },
   impact: {

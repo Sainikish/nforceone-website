@@ -130,7 +130,6 @@ export const industriesWeServeSlugs = [
   "banking-and-financial",
   "digital-media-and-advertising",
   "education-and-edutech",
-  "energy-and-utilities",
   "finance-and-fintech",
   "insurance",
   "isv",
