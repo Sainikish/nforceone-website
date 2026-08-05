@@ -15,7 +15,7 @@ function RollingListRow({ item }: { item: RollingListItem }) {
   return (
     <Link
       href={item.href}
-      className="group relative block w-full border-b border-line py-3 focus-visible:outline-none"
+      className="group relative block w-full border-b border-line py-3 transition-all duration-300 ease-out focus-visible:outline-none hover:z-10 hover:scale-[1.02] hover:rounded-2xl hover:border-transparent hover:bg-white hover:px-6 hover:shadow-xl hover:shadow-ink/10 focus-visible:z-10 focus-visible:scale-[1.02] focus-visible:rounded-2xl focus-visible:border-transparent focus-visible:bg-white focus-visible:px-6 focus-visible:shadow-xl focus-visible:shadow-ink/10"
     >
       {/* Rolling title */}
       <div className="relative h-9 overflow-hidden sm:h-11 md:h-14">

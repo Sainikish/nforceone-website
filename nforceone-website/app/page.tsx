@@ -3,8 +3,8 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Hero } from "@/components/Hero";
 import { Icon } from "@/components/Icon";
-import { RollingList } from "@/components/ui/rolling-list";
 import { Auralis } from "@/components/ui/auralis";
+import { FeaturedCarousel } from "@/components/ui/featured-carousel";
 import { IndexTileCard } from "@/components/IndexTileCard";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
@@ -84,7 +84,7 @@ export default function Home() {
         stats={homeStats}
       />
 
-      <section className="relative overflow-hidden py-12 sm:py-16">
+      <section className="relative overflow-hidden bg-neutral-100 py-12 sm:py-16">
         <Container className="relative">
           <SectionHeading
             eyebrow={whatWeDo.eyebrow}
@@ -92,14 +92,17 @@ export default function Home() {
             align="center"
             className="mx-auto"
           />
-          <div className="mt-8">
-            <RollingList items={whatWeDoRollingItems} />
+          <div className="mt-10">
+            <FeaturedCarousel items={whatWeDoRollingItems} />
           </div>
         </Container>
       </section>
 
-      <section className="py-20 sm:py-28" style={{ backgroundColor: "#B82E1F" }}>
-        <Container>
+      <section className="relative overflow-hidden py-20 sm:py-28">
+        <div className="absolute inset-0">
+          <Auralis height="100%" className="h-full" grain={0.3} />
+        </div>
+        <Container className="relative">
           <SectionHeading
             eyebrow={ourCapabilities.eyebrow}
             title={ourCapabilities.heading}
@@ -112,7 +115,7 @@ export default function Home() {
             {ourCapabilities.items.map((item, i) => (
               <Reveal key={item.title} delay={(i % 4) * 60}>
                 <Link href="/services/devops" className="group block text-center">
-                  <div className="relative aspect-square w-full overflow-hidden rounded-bl-[3rem] rounded-tr-none rounded-tl-none rounded-br-none">
+                  <div className="relative aspect-square w-full overflow-hidden rounded-bl-[3rem] rounded-tr-none rounded-tl-none rounded-br-none shadow-xl shadow-black/40 ring-1 ring-white/10">
                     <Image
                       src={capabilitiesImages[item.title]}
                       alt=""
@@ -120,6 +123,7 @@ export default function Home() {
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
+                    <div className="pointer-events-none absolute inset-0 bg-black/25" />
                   </div>
                   <h3 className="mt-6 text-xl font-bold text-white">
                     {item.title}
@@ -167,14 +171,14 @@ export default function Home() {
           <SectionHeading
             eyebrow="Industries we serve"
             title="Powering Innovation Across Every Industry"
-            description="Our IT services empower organizations — startups, enterprises, and government bodies — to modernize infrastructure, enhance digital resilience, and scale innovation with confidence."
+            description="Our IT services empower organizations startups, enterprises, and government bodies to modernize infrastructure, enhance digital resilience, and scale innovation with confidence."
             align="center"
             className="mx-auto"
             light
           />
-          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-5">
             {industries.map((ind, i) => (
-              <Reveal key={ind!.slug} delay={(i % 6) * 50}>
+              <Reveal key={ind!.slug} delay={(i % 5) * 50}>
                 <Link
                   href={`/industries/${ind!.slug}`}
                   className="group flex h-full flex-col items-center gap-3 rounded-2xl border border-line bg-white p-5 text-center shadow-sm shadow-ink/[0.02] transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lg"

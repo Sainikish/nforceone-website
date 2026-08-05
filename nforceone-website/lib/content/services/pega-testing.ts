@@ -12,7 +12,7 @@ export const pegaTesting: ServicePage = {
   title: "Pega Testing",
   category: "Development",
   metaDescription:
-    "Robust testing solutions for Pega applications — stability, functionality, UX, and security.",
+    "Robust testing solutions for Pega applications stability, functionality, UX, and security.",
   icon: "search",
   heroEyebrow: "Development Services",
   heroHeadline: "Pega Testing",

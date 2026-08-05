@@ -26,7 +26,7 @@ export const servicesIndex: ServiceIndexTile[] = [
     category: "Testing",
     hasPage: true,
     teaser:
-      "Free up internal resources — we handle day-to-day support, management, and monitoring of your QA.",
+      "Free up internal resources we handle day-to-day support, management, and monitoring of your QA.",
   },
   {
     slug: "manual-testing",
@@ -205,7 +205,7 @@ export const servicesIndex: ServiceIndexTile[] = [
   },
   {
     slug: "pega-development",
-    title: "PEGA Development",
+    title: "Pega Development",
     icon: "workflow",
     category: "Development",
     hasPage: true,
@@ -219,7 +219,7 @@ export const servicesIndex: ServiceIndexTile[] = [
     category: "Development",
     hasPage: true,
     teaser:
-      "Testing solutions for Pega applications — stability, functionality, UX, and security.",
+      "Testing solutions for Pega applications stability, functionality, UX, and security.",
   },
   {
     slug: "digital-app-development",
