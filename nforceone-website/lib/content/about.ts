@@ -26,10 +26,26 @@ export const coreValues = {
   heading:
     "Our culture is built around four key attributes that differentiate us from our competition.",
   items: [
-    { icon: "users", title: "User Focused" },
-    { icon: "shield-check", title: "Quality Focused" },
-    { icon: "zap", title: "Agility Focused" },
-    { icon: "sparkles", title: "Innovation Focused" },
+    {
+      icon: "users",
+      title: "User Focused",
+      description: "We design around real user needs, not assumptions.",
+    },
+    {
+      icon: "shield-check",
+      title: "Quality Focused",
+      description: "Rigorous testing and standards built into every delivery.",
+    },
+    {
+      icon: "zap",
+      title: "Agility Focused",
+      description: "We adapt fast and ship without sacrificing quality.",
+    },
+    {
+      icon: "sparkles",
+      title: "Innovation Focused",
+      description: "We bring emerging tech to solve real business problems.",
+    },
   ] satisfies FeatureItem[],
 };
 
