@@ -6,6 +6,7 @@ import { FeatureGrid } from "@/components/FeatureGrid";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icon";
+import { Auralis } from "@/components/ui/auralis";
 import {
   aboutHero,
   caseStudies,
@@ -26,6 +27,8 @@ export default function AboutPage() {
         eyebrow={aboutHero.eyebrow}
         title={aboutHero.title}
         subtext={aboutHero.subtext}
+        backgroundImage="/backgrounds/about-hero.webp"
+        dark
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "About", href: "/about" },
@@ -54,8 +57,11 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-line bg-ink py-20 sm:py-28">
-        <Container>
+      <section className="relative overflow-hidden border-y border-line py-20 sm:py-28">
+        <div className="absolute inset-0">
+          <Auralis height="100%" className="h-full" />
+        </div>
+        <Container className="relative">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold uppercase tracking-wider text-brand-300">
@@ -86,7 +92,6 @@ export default function AboutPage() {
       <section className="border-t border-line bg-surface py-20 sm:py-28">
         <Container>
           <SectionHeading
-            eyebrow="Our people"
             title={whyChooseUs.heading}
             align="center"
             className="mx-auto"
