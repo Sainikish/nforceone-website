@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { StatsRow } from "@/components/StatsRow";
-import { Icon } from "@/components/Icon";
 import type { StatItem } from "@/lib/types";
 
 export function Hero({
@@ -33,10 +32,6 @@ export function Hero({
 
       <Container className="relative pb-[4.5rem] pt-[4.5rem] sm:pb-[6.5rem] sm:pt-[6.5rem]">
         <div className="max-w-2xl">
-          <div className="animate-fade-in mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-white/80">
-            <Icon name="sparkles" className="h-3.5 w-3.5 text-brand-300" />
-            Scale at Speed
-          </div>
           <h1 className="animate-fade-up text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
             {headline}
           </h1>

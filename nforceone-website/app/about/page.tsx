@@ -92,6 +92,7 @@ export default function AboutPage() {
       <section className="border-t border-line bg-surface py-20 sm:py-28">
         <Container>
           <SectionHeading
+            eyebrow="Our team"
             title={whyChooseUs.heading}
             align="center"
             className="mx-auto"
