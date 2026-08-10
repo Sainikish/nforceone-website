@@ -17,7 +17,7 @@ const cultureAttributes = [
   {
     icon: "sparkles" as const,
     title: "Team happiness",
-    description: "We put our people first.",
+    description: "A supportive culture where everyone's voice matters.",
   },
   {
     icon: "clock" as const,
@@ -60,19 +60,21 @@ export default function CareersPage() {
       <section className="border-y border-line bg-surface py-20 sm:py-28">
         <Container>
           <SectionHeading eyebrow="Join us" title={careers.openingsHeading} />
-          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-4">
             {careers.openings.map((role, i) => (
-              <Reveal key={role} delay={i * 70}>
+              <Reveal key={role.title} delay={i * 70}>
                 <div className="flex items-center justify-between gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm shadow-ink/[0.02]">
                   <div className="flex items-center gap-4">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                      <Icon name="clipboard-check" className="h-5 w-5" />
+                      <Icon name={role.icon} className="h-5 w-5" />
                     </span>
-                    <p className="text-base font-semibold text-ink">{role}</p>
+                    <p className="text-base font-semibold text-ink">
+                      {role.title}
+                    </p>
                   </div>
                   <Button
                     href={`mailto:${contact.email}?subject=${encodeURIComponent(
-                      `Application: ${role}`
+                      `Application: ${role.title}`
                     )}`}
                     variant="secondary"
                     size="sm"

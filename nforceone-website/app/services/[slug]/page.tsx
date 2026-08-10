@@ -44,6 +44,10 @@ export default async function ServiceDetailPage({
         title={service.heroHeadline}
         subtext={service.heroSubtext}
         icon={service.icon}
+        image={service.image}
+        imageWidth={service.imageWidth}
+        imageHeight={service.imageHeight}
+        imageBleed={service.imageBleed}
         breadcrumb={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },

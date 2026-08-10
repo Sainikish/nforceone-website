@@ -4,9 +4,8 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { PageHero } from "@/components/PageHero";
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { Reveal } from "@/components/Reveal";
-import { Button } from "@/components/Button";
-import { Icon } from "@/components/Icon";
 import { Auralis } from "@/components/ui/auralis";
+import { DestinationCard } from "@/components/ui/card-21";
 import {
   aboutHero,
   caseStudies,
@@ -14,6 +13,19 @@ import {
   coreValues,
   whyChooseUs,
 } from "@/lib/content/about";
+
+const whyChooseUsMedia = [
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
+    stats: "100+ professionals across India & the US",
+  },
+  {
+    imageUrl:
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80&auto=format&fit=crop",
+    stats: "Real partnerships, real fun",
+  },
+];
 
 export const metadata: Metadata = {
   title: "About",
@@ -40,14 +52,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {caseStudies.map((item, i) => (
               <Reveal key={item.name} delay={i * 80}>
-                <div className="rounded-2xl border border-line bg-white p-6 shadow-sm shadow-ink/[0.02]">
-                  <p className="text-sm font-semibold text-brand-600">
-                    {item.year}
-                  </p>
-                  <p className="mt-1 text-lg font-bold text-ink">
-                    {item.name}
-                  </p>
-                  <p className="mt-1 text-sm text-ink-muted">
+                <div className="h-full bg-stone-200 p-6">
+                  <h3 className="text-xl font-bold text-ink">{item.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                     {item.description}
                   </p>
                 </div>
@@ -92,31 +99,23 @@ export default function AboutPage() {
       <section className="border-t border-line bg-surface py-20 sm:py-28">
         <Container>
           <SectionHeading
+            eyebrow="Our team"
             title={whyChooseUs.heading}
             align="center"
             className="mx-auto"
           />
-          <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-8 sm:h-[450px] lg:grid-cols-2">
             {whyChooseUs.blocks.map((block, i) => (
               <Reveal key={block.heading} delay={i * 100}>
-                <div className="flex h-full flex-col rounded-3xl border border-line bg-white p-8 shadow-sm shadow-ink/[0.02]">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                    <Icon name={block.icon} className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-5 text-xl font-bold text-ink">
-                    {block.heading}
-                  </h3>
-                  <p className="mt-3 flex-1 text-base leading-relaxed text-ink-muted">
-                    {block.text}
-                  </p>
-                  <Button
+                <div className="h-[450px] sm:h-full">
+                  <DestinationCard
+                    imageUrl={whyChooseUsMedia[i].imageUrl}
+                    location={block.heading}
+                    stats={whyChooseUsMedia[i].stats}
                     href={block.cta.href}
-                    variant="secondary"
-                    className="mt-6 self-start"
-                    showArrow
-                  >
-                    {block.cta.label}
-                  </Button>
+                    themeColor="0 72% 45%"
+                    ctaLabel={block.cta.label}
+                  />
                 </div>
               </Reveal>
             ))}

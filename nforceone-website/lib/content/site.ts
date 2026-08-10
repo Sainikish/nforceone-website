@@ -142,11 +142,11 @@ export const careers = {
     "We value team happiness, work/life balance, and professional development.",
   openingsHeading: "Current Opportunities",
   openings: [
-    "Senior Automation Tester",
-    "Performance Tester",
-    "Associate Engineer Intern",
-    "PEGA Developer",
-    "QA Manager",
+    { title: "Senior Automation Tester", icon: "repeat" as const },
+    { title: "Performance Tester", icon: "gauge" as const },
+    { title: "Associate Engineer Intern", icon: "graduation-cap" as const },
+    { title: "Pega Developer", icon: "workflow" as const },
+    { title: "QA Manager", icon: "shield-check" as const },
   ],
   closingHeading: "Come on board at NForce One",
 };
