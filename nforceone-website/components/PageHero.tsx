@@ -12,6 +12,9 @@ export function PageHero({
   subtext,
   icon,
   image,
+  imageWidth = 880,
+  imageHeight = 680,
+  imageBleed = false,
   backgroundImage,
   dark = false,
   breadcrumb,
@@ -23,6 +26,11 @@ export function PageHero({
   subtext: string;
   icon?: IconName;
   image?: string;
+  /** Intrinsic size of `image`, used to preserve its real aspect ratio. Defaults to a 880x680 (~4:3) box. */
+  imageWidth?: number;
+  imageHeight?: number;
+  /** Bleeds `image` to the right edge of the viewport with a soft left fade, instead of a boxed grid column. */
+  imageBleed?: boolean;
   /** Full-bleed cinematic background (dark scenes); use with `dark`. */
   backgroundImage?: string;
   /** Switches to light-on-dark text for use with `backgroundImage`. */
@@ -57,6 +65,27 @@ export function PageHero({
           className="pointer-events-none absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"
         />
       )}
+      {image && imageBleed && (
+        <>
+          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[52%] lg:block">
+            <Image
+              src={image}
+              alt=""
+              aria-hidden="true"
+              fill
+              priority
+              className="object-contain"
+            />
+          </div>
+          <div
+            className={
+              dark
+                ? "pointer-events-none absolute inset-y-0 right-0 hidden w-[52%] bg-gradient-to-r from-ink via-ink/10 to-transparent lg:block"
+                : "pointer-events-none absolute inset-y-0 right-0 hidden w-[52%] bg-gradient-to-r from-white via-white/5 to-transparent lg:block"
+            }
+          />
+        </>
+      )}
       <Container className="relative py-16 sm:py-24">
         {breadcrumb && (
           <nav
@@ -86,12 +115,12 @@ export function PageHero({
 
         <div
           className={
-            image
+            image && !imageBleed
               ? "grid items-center gap-12 lg:grid-cols-2"
               : "max-w-3xl"
           }
         >
-          <div className={image ? "" : undefined}>
+          <div className={image && !imageBleed ? "" : undefined}>
             <div className="mb-5 flex items-center gap-3">
               {icon && (
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600 text-white">
@@ -146,16 +175,16 @@ export function PageHero({
             )}
           </div>
 
-          {image && (
+          {image && !imageBleed && (
             <div className="relative -mx-4 sm:mx-0">
               <Image
                 src={image}
                 alt=""
                 aria-hidden="true"
-                width={880}
-                height={680}
+                width={imageWidth}
+                height={imageHeight}
                 priority
-                className="mx-auto w-full max-w-lg"
+                className="mx-auto h-auto w-full max-w-lg object-contain"
               />
             </div>
           )}

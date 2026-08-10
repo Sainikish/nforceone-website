@@ -11,6 +11,10 @@ export const artificialIntelligence: ServicePage = {
   heroHeadline: "Artificial Intelligence",
   heroSubtext:
     "We design and deploy AI-powered solutions that automate processes, unlock data-driven insights, and enhance decision-making across industries.",
+  image: "/images/solutions/ai-about-us.webp",
+  imageWidth: 998,
+  imageHeight: 622,
+  imageBleed: true,
   why: {
     heading: "Our Services",
     paragraphs: [

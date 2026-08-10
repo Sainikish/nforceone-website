@@ -8,12 +8,23 @@ export const aboutHero = {
 };
 
 export const caseStudies = [
-  { year: "2024", name: "Atomic", description: "AI-driven outreach" },
-  { year: "2024", name: "Intripid", description: "AI Travel Planner" },
+  {
+    year: "2024",
+    name: "Atomic",
+    description: "AI-driven outreach",
+    href: "/services/artificial-intelligence",
+  },
+  {
+    year: "2024",
+    name: "Metronet",
+    description: "End-to-end QA",
+    href: "/services/quality-assurance",
+  },
   {
     year: "2025",
     name: "Consolidated Communication",
     description: "End-to-end QA",
+    href: "/services/quality-assurance",
   },
 ];
 

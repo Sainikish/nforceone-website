@@ -100,6 +100,13 @@ export interface ServicePage {
   heroSubtext: string;
   /** Full-bleed cinematic hero background, e.g. "/backgrounds/qa-scene.webp" */
   heroBackgroundImage?: string;
+  /** Illustration shown beside the hero text in a two-column layout */
+  image?: string;
+  /** Intrinsic size of `image`, used to preserve its real aspect ratio */
+  imageWidth?: number;
+  imageHeight?: number;
+  /** Bleeds `image` to the right edge with a soft left fade instead of a boxed column */
+  imageBleed?: boolean;
   /** "Why Your ... Needs ..." section */
   why: {
     heading: string;
