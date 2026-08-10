@@ -112,28 +112,37 @@ export default function Home() {
             eyebrowClassName="text-white/80"
           />
           <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {ourCapabilities.items.map((item, i) => (
-              <Reveal key={item.title} delay={(i % 4) * 60}>
-                <Link href="/services/devops" className="group block text-center">
-                  <div className="relative aspect-square w-full overflow-hidden rounded-bl-[3rem] rounded-tr-none rounded-tl-none rounded-br-none shadow-xl shadow-black/40 ring-1 ring-white/10">
-                    <Image
-                      src={capabilitiesImages[item.title]}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-black/25" />
-                  </div>
-                  <h3 className="mt-6 text-xl font-bold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-white/70">
-                    {item.description}
-                  </p>
-                </Link>
-              </Reveal>
-            ))}
+            {ourCapabilities.items.map((item, i) => {
+              const anchor = capabilitiesImages[item.title]
+                .split("/")
+                .pop()!
+                .replace(".webp", "");
+              return (
+                <Reveal key={item.title} delay={(i % 4) * 60}>
+                  <Link
+                    href={`/services/devops#${anchor}`}
+                    className="group block text-center"
+                  >
+                    <div className="relative aspect-square w-full overflow-hidden rounded-bl-[3rem] rounded-tr-none rounded-tl-none rounded-br-none shadow-xl shadow-black/40 ring-1 ring-white/10">
+                      <Image
+                        src={capabilitiesImages[item.title]}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-black/25" />
+                    </div>
+                    <h3 className="mt-6 text-xl font-bold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-white/70">
+                      {item.description}
+                    </p>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>

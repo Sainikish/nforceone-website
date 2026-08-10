@@ -62,6 +62,8 @@ export interface FeatureItem {
   icon?: IconName;
   title: string;
   description?: string;
+  /** Anchor id for deep-linking to this item from other pages. */
+  id?: string;
 }
 
 export interface StatItem {
