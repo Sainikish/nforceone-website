@@ -26,8 +26,8 @@ export const homeStats: StatItem[] = [
     description: "Web, Mobile, API & Cloud Testing Expertise",
   },
   {
-    value: "0",
-    label: "Critical Defects",
+    value: "Zero",
+    label: "Critical Defects Escaped",
     description: "Shift-Left & Continuous Testing Practices",
   },
 ];

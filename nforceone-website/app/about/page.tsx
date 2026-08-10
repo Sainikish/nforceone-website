@@ -17,12 +17,14 @@ import {
 const whyChooseUsMedia = [
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80&auto=format&fit=crop",
+    imageAlt: "Engineers reviewing code together on a laptop",
     stats: "100+ professionals across India & the US",
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80&auto=format&fit=crop",
+    imageAlt: "Team members laughing together while working",
     stats: "Real partnerships, real fun",
   },
 ];
@@ -110,6 +112,7 @@ export default function AboutPage() {
                 <div className="h-[450px] sm:h-full">
                   <DestinationCard
                     imageUrl={whyChooseUsMedia[i].imageUrl}
+                    imageAlt={whyChooseUsMedia[i].imageAlt}
                     location={block.heading}
                     stats={whyChooseUsMedia[i].stats}
                     href={block.cta.href}

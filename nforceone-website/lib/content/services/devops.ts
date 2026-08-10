@@ -28,14 +28,14 @@ export const devops: ServicePage = {
   typesSection: {
     heading: "Our Capabilities",
     items: [
-      { icon: "git-branch", title: "CI/CD Pipeline Setup" },
-      { icon: "code", title: "Infrastructure as Code (IaC)" },
-      { icon: "cloud", title: "Cloud Infrastructure Management" },
-      { icon: "container", title: "Containerization & Orchestration" },
-      { icon: "activity", title: "Monitoring & Observability" },
-      { icon: "lock", title: "Security & Compliance Automation" },
-      { icon: "brain", title: "DevOps for AI/ML (MLOps)" },
-      { icon: "settings", title: "Environment Automation" },
+      { icon: "git-branch", title: "CI/CD Pipeline Setup", id: "ci-cd-pipeline" },
+      { icon: "code", title: "Infrastructure as Code (IaC)", id: "infrastructure-as-code" },
+      { icon: "cloud", title: "Cloud Infrastructure Management", id: "cloud-infrastructure" },
+      { icon: "container", title: "Containerization & Orchestration", id: "containerization" },
+      { icon: "activity", title: "Monitoring & Observability", id: "monitoring" },
+      { icon: "lock", title: "Security & Compliance Automation", id: "security-compliance" },
+      { icon: "brain", title: "DevOps for AI/ML (MLOps)", id: "mlops" },
+      { icon: "settings", title: "Environment Automation", id: "environment-automation" },
     ],
   },
   impact: {

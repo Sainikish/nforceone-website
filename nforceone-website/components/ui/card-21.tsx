@@ -1,9 +1,11 @@
 import * as React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 import { ArrowRight } from "lucide-react";
 
 interface DestinationCardProps extends React.HTMLAttributes<HTMLDivElement> {
   imageUrl: string;
+  imageAlt?: string;
   location: string;
   flag?: string;
   stats: string;
@@ -17,6 +19,7 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
     {
       className,
       imageUrl,
+      imageAlt = "",
       location,
       flag,
       stats,
@@ -50,10 +53,12 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
           }}
         >
           {/* Background Image with Parallax Zoom */}
-          <div
-            className="absolute inset-0 bg-cover bg-center
-                       transition-transform duration-500 ease-in-out group-hover:scale-110"
-            style={{ backgroundImage: `url(${imageUrl})` }}
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
           />
 
           {/* Themed Gradient Overlay */}
